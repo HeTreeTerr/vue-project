@@ -89,6 +89,7 @@ export default {
     }
   }
 }
+
 </script>
 
 <style>
@@ -133,5 +134,9 @@ export default {
   .el-dropdown-link {
     display: flex;
     align-items: center;
+  }
+  .el-aside{
+    height: 100vh;
+    border-right:1px solid black;
   }
 </style>

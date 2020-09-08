@@ -1,9 +1,9 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 // import { Notification } from 'element-ui'
-// import {getRequest} from '../utils/api'
-// import '../utils/stomp'
-// import '../utils/sockjs'
+import {getRequest} from '../utils/api'
+import '../utils/stomp'
+import '../utils/sockjs'
 
 Vue.use(Vuex)
 
@@ -55,7 +55,7 @@ const store = new Vuex.Store({
     }
   },
   actions: {
-    // connect (context) {
+    connect (context) {
     //   context.state.stomp = Stomp.over(new SockJS('/ws/ep'))
     //   context.state.stomp.connect({}, success => {
     //     context.state.stomp.subscribe('/user/queue/chat', msg => {
@@ -75,15 +75,15 @@ const store = new Vuex.Store({
     //   }, error => {
     //     alert(4396)
     //   })
-    // },
-    // initData (context) {
-    //   context.commit('INIT_DATA')
-    //   getRequest('/chat/hrs').then(resp => {
-    //     if (resp) {
-    //       context.commit('INIT_HR', resp)
-    //     }
-    //   })
-    // }
+    },
+    initData (context) {
+      context.commit('INIT_DATA')
+      getRequest('/chat/hrs').then(resp => {
+        if (resp) {
+          context.commit('INIT_HR', resp)
+        }
+      })
+    }
   }
 })
 

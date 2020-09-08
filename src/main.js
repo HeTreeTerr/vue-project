@@ -60,8 +60,8 @@ import {postKeyValueRequest} from './utils/api'
 import {putRequest} from './utils/api'
 import {deleteRequest} from './utils/api'
 import {getRequest} from './utils/api'
-// import {initMenu} from "./utils/menus"
-// import 'font-awesome/css/font-awesome.min.css'
+import {initMenu} from './utils/menus'
+import 'font-awesome/css/font-awesome.min.css'
 
 Vue.prototype.$ELEMENT = {size: 'small', zIndex: 3000}
 Vue.use(Switch)
@@ -125,7 +125,7 @@ router.beforeEach((to, from, next) => {
     next()
   } else {
     if (window.sessionStorage.getItem('user')) {
-      // initMenu(router, store)
+      initMenu(router, store)
       next()
     } else {
       next('/?redirect=' + to.path)
