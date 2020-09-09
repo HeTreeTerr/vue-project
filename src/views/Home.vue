@@ -136,7 +136,14 @@ export default {
     align-items: center;
   }
   .el-aside{
-    height: 100vh;
-    border-right:1px solid black;
+    height: 93vh;
+    border-right:1px solid #e6e6e6;
+    overflow: hidden;
+  }
+  .el-menu{
+    border-right: none;
+  }
+  .homeRouterView{
+    height: 70vh;
   }
 </style>

@@ -30,16 +30,15 @@ export default new Router({
       hidden: false,
       mate: {
         requireAuth: true
-      }
-    },
-    {
-      path: '/hrinfo',
-      name: 'Hrinfo',
-      component: Hrinfo,
-      hidden: false,
-      mate: {
-        requireAuth: true
-      }
+      },
+      children: [
+        {
+          path: '/hrinfo',
+          name: '个人中心',
+          component: Hrinfo,
+          hidden: true
+        }
+      ]
     }
   ]
 })

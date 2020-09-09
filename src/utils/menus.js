@@ -35,7 +35,7 @@ export const formatRoutes = (routes) => {
       children: children,
       component (resolve) {
         if (component.startsWith('Home')) {
-          // require(['../views/' + component + '.vue'], resolve)
+          require(['../views/' + component + '.vue'], resolve)
         } else if (component.startsWith('Emp')) {
           require(['../views/emp/' + component + '.vue'], resolve)
         } else if (component.startsWith('Per')) {
